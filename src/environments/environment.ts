@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  url: 'https://www.ubiquantum.com.co/ws/api.php',
+  apiKey: 'mZpU3r8EtYXTLNrPhFNw',
+  imgPath:'https://www.ubiquantum.com.co/ws/uploads/'
 };
 
 /*

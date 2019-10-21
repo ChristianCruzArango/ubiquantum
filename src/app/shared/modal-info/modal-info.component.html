@@ -1,0 +1,98 @@
+<ion-header no-border translucent>
+
+    <ion-toolbar>
+
+        <ion-buttons slot="start">
+            <ion-button color="secondary" (click)="salir()">
+                <ion-icon slot="icon-only" name="arrow-round-back" color="dark"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+
+        <ion-buttons slot="secondary">
+            <ion-button>
+                <ion-icon slot="icon-only" name="information-circle" color="dark"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-buttons slot="primary">
+            <ion-button color="secondary">
+                <ion-icon slot="icon-only" name="build" color="dark"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>
+            <img src="assets/icon/logo.png" class="logoImg">
+        </ion-title>
+
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+    <ion-card mode="ios" color="primary">
+
+        <ion-card-header>
+            <ion-row>
+                <ion-col size="3">
+                    <img [src]="profiles_all | imagen" class="imgLogo">
+                </ion-col>
+                <ion-col size="6" offset="3">
+                    <h6><u>{{profiles_all['contact']}}</u></h6>
+                </ion-col>
+            </ion-row>
+        </ion-card-header>
+
+        <ion-card-content>
+            <h6>{{profiles_all['description']}}</h6>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-badge color="danger" class="promociones">Promociones</ion-badge>
+
+    <app-promociones [idCliente]="profiles_all['id']"></app-promociones>
+
+
+
+
+
+</ion-content>
+
+<ion-footer no-border translucent>
+
+    <ion-toolbar color="primary">
+
+        <ion-buttons slot="secondary">
+            <ion-button color="secondary">
+                <a color="secondary" [href]="telefono">
+                    <ion-icon slot="icon-only" name="call" color="light"></ion-icon>
+                </a>
+            </ion-button>
+        </ion-buttons>
+
+        <ion-buttons slot="secondary">
+            <ion-button color="secondary">
+                <a color="secondary" [href]="correo">
+                    <ion-icon slot="icon-only" name="mail-unread" color="light"></ion-icon>
+                </a>
+            </ion-button>
+        </ion-buttons>
+
+        <ion-buttons slot="secondary">
+            <ion-button color="secondary">
+                <a color="secondary" [href]="telefonoCel">
+                    <ion-icon slot="icon-only" name="phone-portrait" color="light"></ion-icon>
+                </a>
+            </ion-button>
+        </ion-buttons>
+
+        <ion-buttons slot="end">
+            <ion-button color="secondary">
+                <a color="secondary" [href]="profiles_all['site']" target="_blank">
+                    <ion-icon slot="icon-only" name="logo-chrome" color="light"></ion-icon>
+                </a>
+            </ion-button>
+        </ion-buttons>
+
+        <ion-title>Contacto</ion-title>
+    </ion-toolbar>
+
+</ion-footer>

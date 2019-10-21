@@ -1,0 +1,52 @@
+<ion-header no-border translucent>
+
+    <ion-toolbar>
+
+        <ion-buttons slot="start">
+            <ion-button color="secondary" (click)="salir()">
+                <ion-icon slot="icon-only" name="arrow-round-back" color="dark"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+
+        <ion-title>
+            <img src="assets/icon/logo.png" class="logoImg">
+        </ion-title>
+
+    </ion-toolbar>
+
+</ion-header>
+
+
+
+<ion-content padding>
+
+    <ion-badge color="light">{{promocionesIndividuales['profileName']}}</ion-badge>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <div>Fecha de Inicio:
+                    <ion-badge color="secondary">{{promocionesIndividuales['startDate']}}</ion-badge>
+                </div>
+            </ion-col>
+            <ion-col>
+                <div>Fecha de Fin:
+                    <ion-badge color="danger">{{promocionesIndividuales['endDate']}}</ion-badge>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+
+    <ion-card mode="ios">
+        <img [src]="imagen">
+        <ion-card-header>
+            <ion-card-subtitle>{{promocionesIndividuales['subtitle']}}</ion-card-subtitle>
+            <ion-card-title> {{promocionesIndividuales['title']}} </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            {{promocionesIndividuales['content']}}
+        </ion-card-content>
+    </ion-card>
+
+</ion-content>

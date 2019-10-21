@@ -1,0 +1,90 @@
+<ion-header no-border translucent>
+
+    <ion-toolbar>
+
+        <ion-buttons slot="start">
+            <ion-button color="secondary" (click)="salir()">
+                <ion-icon slot="icon-only" name="arrow-round-back" color="dark"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+
+        <ion-title>
+            <img src="assets/icon/logo.png" class="logoImg">
+        </ion-title>
+
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+    <agm-map [latitude]="latd" [longitude]="lngo" [zoom]="50">
+        <agm-marker [latitude]="latd" [longitude]="lngo"></agm-marker>
+    </agm-map>
+
+    <ion-card mode="ios" color="primary" *ngFor="let location of locations_show">
+
+        <ion-card-header>
+            <ion-row>
+                <ion-col size="3">
+                    <img [src]="location | logo" class="imgLogo">
+                </ion-col>
+                <ion-col size="6" offset="3">
+                    <h6><u> {{location['locationContact']}}</u></h6>
+                </ion-col>
+            </ion-row>
+        </ion-card-header>
+
+        <ion-card-content>
+            <h6>{{location['profileDescription']}}</h6>
+        </ion-card-content>
+
+        <ion-item>
+            <ion-icon name="business" slot="start"></ion-icon>
+            <ion-label>{{location['locationAddress']}}</ion-label>
+        </ion-item>
+
+
+    </ion-card>
+
+
+</ion-content>
+
+<ion-footer no-border translucent>
+
+    <ion-toolbar color="primary">
+
+        <ion-buttons slot="secondary">
+            <ion-button color="secondary">
+                <a color="secondary" [href]="telefono">
+                    <ion-icon slot="icon-only" name="call" color="light"></ion-icon>
+                </a>
+            </ion-button>
+        </ion-buttons>
+
+        <ion-buttons slot="secondary">
+            <ion-button color="secondary">
+                <a color="secondary" [href]="correo">
+                    <ion-icon slot="icon-only" name="mail-unread" color="light"></ion-icon>
+                </a>
+            </ion-button>
+        </ion-buttons>
+
+        <ion-buttons slot="secondary">
+            <ion-button color="secondary">
+                <a color="secondary" [href]="telefonoCel">
+                    <ion-icon slot="icon-only" name="phone-portrait" color="light"></ion-icon>
+                </a>
+            </ion-button>
+        </ion-buttons>
+
+        <ion-buttons slot="end" class="correo">
+            <ion-button color="secondary">
+                <ion-icon slot="icon-only" name="logo-chrome" color="light"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+
+        <ion-title>Contacto</ion-title>
+    </ion-toolbar>
+
+</ion-footer>

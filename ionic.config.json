@@ -1,5 +1,7 @@
 {
   "name": "ubiquantum",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

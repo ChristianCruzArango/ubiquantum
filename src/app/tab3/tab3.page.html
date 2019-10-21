@@ -1,9 +1,40 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab Three
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header></app-header>
 
-<ion-content></ion-content>
+<ion-toolbar>
+
+    <!-- Default Segment -->
+    <ion-segment color="tertiary" (ionChange)="segmentChanged($event)">
+
+        <ion-segment-button value="Activos">
+            <ion-label>Activos</ion-label>
+        </ion-segment-button>
+
+        <ion-segment-button value="Inactivos">
+            <ion-label>Inactivos</ion-label>
+        </ion-segment-button>
+
+    </ion-segment>
+
+</ion-toolbar>
+
+
+<ion-content fullscreen>
+
+    <ion-card *ngFor="let proAll of promocionesAll | filtrarPromociones:publisher:'publisher'" (click)="abrirModal(proAll)">
+        <img [src]="proAll | imagenallpromocion">
+        <ion-card-header>
+            <ion-item>
+                <ion-icon name="clock" slot="start" color="danger"></ion-icon>
+                <ion-label>{{proAll['profileName']}}</ion-label>
+
+            </ion-item>
+            <ion-card-subtitle></ion-card-subtitle>
+            <ion-card-title></ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            {{proAll['promotionTitle']}} Hola como estas
+        </ion-card-content>
+    </ion-card>
+
+
+</ion-content>

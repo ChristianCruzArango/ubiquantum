@@ -1,0 +1,10 @@
+<ion-slides>
+
+    <ion-slide *ngFor="let pro of promociones">
+        <img [src]="pro | imgPromociones" class="slide-image">
+        <h2>{{pro['title']}}</h2>
+        <p>{{pro['content']}}</p>
+    </ion-slide>
+
+
+</ion-slides>
